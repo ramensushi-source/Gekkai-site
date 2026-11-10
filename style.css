@@ -1,0 +1,110 @@
+body {
+  background-color: #202027;
+  color: #40372f;
+  font-family: sans-serif;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 70px;
+  color: #8b6f55;
+}
+
+p {
+  font-size: 16px;
+}
+/* 一文字ずつ表示するアニメーション */
+.letter-animation span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: letterAppear 0.6s ease forwards;
+}
+
+/* 文字が現れる動き */
+@keyframes letterAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 一文字ずつ時間をずらす */
+.letter-animation span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.letter-animation span:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.letter-animation span:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.letter-animation span:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+/* 本文のゆっくりした出現 */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+
+  animation: textReveal 1.4s ease-out 0.8s forwards;
+}
+
+/* 本文の動き */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  margin: 0;
+  min-height: 200vh;
+  background: #202027;
+  color: #e8dfd2;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* 満月 */
+.moon {
+  position: fixed;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff8e8,
+    #e8d5ad 55%,
+    #b9a17d 100%
+  );
+
+  box-shadow:
+    0 0 30px rgba(232, 213, 173, 0.25),
+    0 0 100px rgba(232, 213, 173, 0.12);
+
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 文字 */
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: 65vh;
+  text-align: center;
+}
